@@ -1,0 +1,128 @@
+.container{
+  margin-top: -0.5em; /* para que no haga scroll veertical */
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.input{
+  background-color:  rgba(0, 0, 0, 0.5);
+  margin-top: 0.5em;
+  border-radius: 0.99em;
+  border: 1px solid coral;
+  color:rgb(255, 255, 255);
+  height: 1.60em;
+  font-size: 1.1em;
+  padding: 0.5em;
+  margin-right: 0.3em;
+}
+
+/* .btn{
+  background-color: rgb(26, 24, 24);
+  margin-top: 0.5em;
+  color: coral;
+  border-radius: 0.3em;
+  margin-left: 0.3em;
+  width: 6em;
+  height: 1.8em;
+  font-size: 1.1em;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+.btn:hover{
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  color: white;
+}
+ */
+
+
+ /* ? Este lo saque de ui buttons, ver si lo dejo o descomento el de arriba */
+.botones,
+.btn,
+.btn *,
+.btn :after,
+.btn :before,
+.btn:after,
+.btn:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.btn {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: coral;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
+  margin-top: 0.5em;
+  height: 1em;
+  padding-bottom: 1em;
+    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn:disabled {
+  cursor: default;
+}
+.btn:-moz-focusring {
+  outline: auto;
+}
+.btn svg {
+  display: block;
+  vertical-align: middle;
+}
+.btn [hidden] {
+  display: none;
+}
+.btn {
+  border-radius: 99rem;
+  border-width: 2px;
+  overflow: hidden;
+  padding: 0.8rem 3rem;
+  position: relative;
+}
+.btn span {
+  mix-blend-mode: difference;
+}
+.btn:after,
+.btn:before {
+  --tilt: 1.2rem;
+  background: #817b7b44;
+  -webkit-clip-path: polygon(
+    0 0,
+    calc(100% - var(--tilt)) 0,
+    100% 100%,
+    0 100%
+  );
+  clip-path: polygon(0 0, calc(100% - var(--tilt)) 0, 100% 100%, 0 100%);
+  content: "";
+  display: block;
+  height: 100%;
+  left: calc(-100% - var(--tilt));
+  position: absolute;
+  top: 0;
+  transform: translateX(var(--progress, 0));
+  transition: transform 0.4s ease;
+  width: calc(100% + var(--tilt));
+}
+.btn:after {
+  left: 100%;
+  transform: translateX(var(--progress, 0)) rotate(180deg);
+  z-index: -1;
+}
+.btn:hover:before {
+  --progress: 100%;
+}
+.btn:hover:after {
+  --progress: -100%;
+}

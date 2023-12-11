@@ -1,0 +1,18 @@
+/* .container{
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  margin: 1em;
+  width: 100%;
+  @media  screen and (max-width: 600px) {
+    flex-wrap: wrap;
+  }
+} */
+  .container{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%; /* Puedes ajustar este valor según tus necesidades */
+  margin: 0 auto;
+  }

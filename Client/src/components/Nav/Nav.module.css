@@ -1,0 +1,119 @@
+.container{
+background-color: rgba(0, 0, 0, 0.74);
+height: 3em;
+margin-top: -1em;
+}
+
+/* .botones{
+    background-color: rgb(26, 24, 24);
+  color: coral;
+  border-radius: 0.3em;
+  margin-left: 5.3em;
+  margin-right: 22%;
+  margin-top: 0.5em;
+  width: 6em;
+  height: 1.8em;
+  font-size: 1.1em;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  flex-wrap: wrap;
+  float: left; 
+}
+.botones:hover{
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  color: white;
+}
+ */
+
+
+/* ? Este lo saque de ui buttons, ver si lo dejo o descomento el de arriba */
+.botones,
+.botones *,
+.botones :after,
+.botones :before,
+.botones:after,
+.botones:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.botones {
+  float:left;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: coral;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  font-weight: 900;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+  text-transform: uppercase;
+  margin-left: 5.3em;
+  margin-top: 0.5em;
+  height: 1em;
+  padding-bottom: 1em;
+    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.botones:disabled {
+  cursor: default;
+}
+.botones:-moz-focusring {
+  outline: auto;
+}
+.botones svg {
+  display: block;
+  vertical-align: middle;
+}
+.botones [hidden] {
+  display: none;
+}
+.botones {
+  border-radius: 99rem;
+  border-width: 2px;
+  overflow: hidden;
+  padding: 0.8rem 3rem;
+  position: relative;
+}
+.botones span {
+  mix-blend-mode: difference;
+}
+.botones:after,
+.botones:before {
+  --tilt: 1.2rem;
+  background: #817b7b44;
+  -webkit-clip-path: polygon(
+    0 0,
+    calc(100% - var(--tilt)) 0,
+    100% 100%,
+    0 100%
+  );
+  clip-path: polygon(0 0, calc(100% - var(--tilt)) 0, 100% 100%, 0 100%);
+  content: "";
+  display: block;
+  height: 100%;
+  left: calc(-100% - var(--tilt));
+  position: absolute;
+  top: 0;
+  transform: translateX(var(--progress, 0));
+  transition: transform 0.4s ease;
+  width: calc(100% + var(--tilt));
+}
+.botones:after {
+  left: 100%;
+  transform: translateX(var(--progress, 0)) rotate(180deg);
+  z-index: -1;
+}
+.botones:hover:before {
+  --progress: 100%;
+}
+.botones:hover:after {
+  --progress: -100%;
+}

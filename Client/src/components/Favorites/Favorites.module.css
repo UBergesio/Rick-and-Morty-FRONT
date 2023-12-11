@@ -1,0 +1,14 @@
+.container{
+display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%; /* Puedes ajustar este valor según tus necesidades */
+  margin: 0 auto;
+}
+.titulo{
+  color: rgb(218, 97, 53);
+  background-color: black;
+  width: 18em;
+  margin-left: 13em;
+}
