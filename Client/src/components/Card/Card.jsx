@@ -2,8 +2,8 @@ import style from "./Card.module.css";
 import { Link } from "react-router-dom";
 import { addFav, removeFav } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { useState, useEffect } from "react";
-
+/* import { useState, useEffect } from "react";
+ */
 export default function Card(props) {
   const dispatch = useDispatch();
   const myFavorites = useSelector((state) => state.myFavorites);
