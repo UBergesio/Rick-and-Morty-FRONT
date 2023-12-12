@@ -8,7 +8,8 @@ import { useDispatch } from "react-redux";
 const Favorites = (props) => {
   const { myFavorites } = props;
   const dispatch = useDispatch();
-  const [, setAux] = useState(false);
+  // eslint-disable-next-line no-unused-vars
+  const [aux, setAux] = useState(false);
 
   const handleOrder = (event) => {
     dispatch(orderCards(event.target.value));
