@@ -44,7 +44,9 @@ export const removeFav = (id) => {
         payload: data,
       });
     } catch (error) {
-      alert(error.message);
+
+      // ! ACA ESTA EL ERROR **************************************************************
+      console.log(error.message);;
     }
   };
 };
