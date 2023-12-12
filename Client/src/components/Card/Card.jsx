@@ -8,34 +8,24 @@ export default function Card(props) {
   const dispatch = useDispatch();
   const myFavorites = useSelector((state) => state.myFavorites);
 
-  const [isFav, setFav] = useState(false);
+  // Utiliza el estado local para determinar si el personaje es un favorito
+  const isFav = myFavorites.some((fav) => fav.id === props.id);
+
   const handleFavorite = () => {
-    if (isFav === true) {
-      setFav(false);
+    // No necesitas verificar si isFav es true o false, simplemente cambia su valor
+    if (isFav) {
       dispatch(removeFav(props.id));
-    } else if (isFav === false) {
-      setFav(true);
+    } else {
       dispatch(addFav(props));
     }
   };
 
-  useEffect(() => {
-    myFavorites.forEach((fav) => {
-      if (fav.id === props.id) {
-        setFav(true);
-      }
-    });
-  }, [myFavorites, props.id]);
-
   return (
     <div className={style.container}>
-      {isFav ? (
-        <button onClick={handleFavorite}>❤️</button>
-      ) : (
-        <button onClick={handleFavorite}>🤍</button>
-      )}
+      {/* Utiliza el valor de isFav para mostrar el botón correcto */}
+      <button onClick={handleFavorite}>{isFav ? "❤️" : "🤍"}</button>
       <button className={style.btn} onClick={() => props.onClose(props.id)}>
-        X
+        X X
       </button>
       <hr className={style.hr} />
       <img className={style.image} src={props.image} alt="" />
