@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import "./App.css";
 import axios from "axios";
 import { useState } from "react";
@@ -62,15 +61,15 @@ function App() {
       access && navigate("/home");
     }); */
     try {
-      const backLogin = await axios(
+      /* const backLogin = await axios(
         URL + `?email=${email}&password=${password}`
       );
       const { data } = backLogin;
-      const { access } = data;
-      setAccess(data);
+      const { access } = data; */
+      setAccess(true);
       access && navigate("/home");
     } catch (error) {
-      window.alert(error.message);
+      window.alert("El error esta aca");
     }
   }
 
