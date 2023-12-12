@@ -27,7 +27,7 @@ function App() {
     ); */
     try {
       const backRequest = await axios(
-        `http://localhost:3001/rickandmorty/character/${id}`
+        `/rickandmorty/character/${id}`
       );
       if (backRequest.data.name) {
         setCharacters((oldChars) => [...oldChars, backRequest.data]);
@@ -54,7 +54,7 @@ function App() {
 
   async function login(userData) {
     const { email, password } = userData;
-    const URL = "http://localhost:3001/rickandmorty/login/";
+    const URL = "/rickandmorty/login/";
    /*  axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
       const { access } = data;
       setAccess(data);

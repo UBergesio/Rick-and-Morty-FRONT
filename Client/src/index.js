@@ -5,6 +5,11 @@ import './index.css'
 import App from './App'
 import store from './components/redux/store';
 import { Provider } from 'react-redux';
+import axios from "axios";
+
+/* axios.default.baseURL = "http://localhost:3001"; */
+axios.default.baseURL =
+  "https://rick-and-morty-back-production-2ae1.up.railway.app/";
 
 ReactDOM.render(
   <Provider store={store}>
