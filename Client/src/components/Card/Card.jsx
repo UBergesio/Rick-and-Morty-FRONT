@@ -2,30 +2,41 @@ import style from "./Card.module.css";
 import { Link } from "react-router-dom";
 import { addFav, removeFav } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-/* import { useState, useEffect } from "react";
- */
+import { useState, useEffect } from "react";
+import Favorites from "../Favorites/Favorites";
+
 export default function Card(props) {
   const dispatch = useDispatch();
   const myFavorites = useSelector((state) => state.myFavorites);
 
-  // Utiliza el estado local para determinar si el personaje es un favorito
-  const isFav = myFavorites.some((fav) => fav.id === props.id);
-
+  const [isFav, setFav] = useState(false);
   const handleFavorite = () => {
-    // No necesitas verificar si isFav es true o false, simplemente cambia su valor
-    if (isFav) {
+    if (isFav === true) {
+      setFav(false);
       dispatch(removeFav(props.id));
-    } else {
+    } else if (isFav === false) {
+      setFav(true);
       dispatch(addFav(props));
     }
   };
 
+  useEffect(() => {
+    myFavorites.forEach((fav) => {
+      if (fav.id === props.id) {
+        setFav(true);
+      }
+    });
+  }, [myFavorites, props.id]);
+
   return (
     <div className={style.container}>
-      {/* Utiliza el valor de isFav para mostrar el botón correcto */}
-      <button onClick={handleFavorite}>{isFav ? "❤️" : "🤍"}</button>
+      {isFav ? (
+        <button onClick={handleFavorite}>❤️</button>
+      ) : (
+        <button onClick={handleFavorite}>🤍</button>
+      )}
       <button className={style.btn} onClick={() => props.onClose(props.id)}>
-        X X
+        X
       </button>
       <hr className={style.hr} />
       <img className={style.image} src={props.image} alt="" />
@@ -38,6 +49,7 @@ export default function Card(props) {
       <h2 className={style.description}>{props.gender}</h2>
       <h2 className={style.descriptionOrigin}>{props.origin}</h2>
       <hr className={style.hr} />
+      <Favorites myFavorites={myFavorites}/>
     </div>
   );
 }

@@ -35,7 +35,7 @@ const Favorites = (props) => {
       </select>
       <h1 className={style.titulo}>Mis personajes favoritos</h1>
       <div className={style.container}>
-        {myFavorites.map((character) => (
+        {myFavorites?.map((character) => (
           <Card
             key={character.id}
             id={character.id}

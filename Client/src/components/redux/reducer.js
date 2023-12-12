@@ -10,18 +10,17 @@ const rootReducer = (state = initialState, action) => {
     case ADD_FAV:
       return {
         ...state,
-        myFavorites: action.payload,
-        allCharacters: action.payload,
+        myFavorites: [state.myFavorites, action.payload],
       };
 
     case REMOVE_FAV:
-      return { ...state, myFavorites: action.payload };
+      return { ...state, myFavorites: [action.payload] };
 
     case FILTER:
       if (action.payload === "All") {
         return {
           ...state,
-          myFavorites: state.allCharacters,
+          myFavorites: [state.allCharacters],
         };
       } else {
         const allCharactersFilter = state.allCharacters.filter(
@@ -29,7 +28,7 @@ const rootReducer = (state = initialState, action) => {
         );
         return {
           ...state,
-          myFavorites: allCharactersFilter,
+          myFavorites: [allCharactersFilter],
         };
       }
 
@@ -42,7 +41,7 @@ const rootReducer = (state = initialState, action) => {
       }
       return {
         ...state,
-        myFavorites: allCharactersOrder,
+        myFavorites: [allCharactersOrder],
       };
 
     default:
