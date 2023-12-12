@@ -7,8 +7,8 @@ import store from './components/redux/store';
 import { Provider } from 'react-redux';
 import axios from "axios";
 
-/* axios.default.baseURL = "http://localhost:3001"; */
-axios.default.baseURL =
+/* axios.defaults.baseURL = "http://localhost:3001"; */
+axios.defaults.baseURL =
   "https://rick-and-morty-back-production-2ae1.up.railway.app/";
 
 ReactDOM.render(
